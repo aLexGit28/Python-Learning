@@ -1,0 +1,1 @@
+I am using thr file in write mode.I am using the file in append mode.
