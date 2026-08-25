@@ -1,1 +1,1 @@
-input
+destroy
