@@ -1,18 +1,18 @@
-from pickle import NONE
+class Node:
 
-class Node():
-  def __init__(self, data):
-      self.data = data
-      self.next = NONE
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
 
 a = Node(10)
 b = Node(20)
-c =Node(40)
+c = Node(40)
 
-a.next = b
-b.next =c
-c.next = NONE
+a.next = b # pyright: ignore[reportAttributeAccessIssue]
+b.next = c # pyright: ignore[reportAttributeAccessIssue]
+c.next = None
 
 print(a.data)
-print(a.next.data)
-print(a.next.next.data)
+print(a.next.data) # type: ignore
+print(a.next.next.data) # type: ignore
