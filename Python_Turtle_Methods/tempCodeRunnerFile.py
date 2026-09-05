@@ -1,1 +1,1 @@
-print(a>b or a==c) #
+.right(90)

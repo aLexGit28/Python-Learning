@@ -2,7 +2,7 @@ import turtle
 
 t = turtle.Turtle()
 
-t.fillcolor("red")
+t.fillcolor("blue")
 t.begin_fill()
 
 for i in range(4):
