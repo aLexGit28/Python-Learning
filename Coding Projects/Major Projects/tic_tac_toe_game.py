@@ -1,24 +1,23 @@
 from tkinter import * # type: ignore
 from tkinter import messagebox
 
-# Main window
 root = Tk()
 root.title("Tic Tac Toe")
-root.geometry("320x380")
+root.geometry("400x450")
 
-# Variables
 current_player = "X"
 board = [""] * 9
+buttons = []
 
-# Check winner
+
 def check_winner():
-    winning_combinations = [
-        [0,1,2], [3,4,5], [6,7,8],  # Rows
-        [0,3,6], [1,4,7], [2,5,8],  # Columns
-        [0,4,8], [2,4,6]            # Diagonals
+    winning_combos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
     ]
 
-    for combo in winning_combinations:
+    for combo in winning_combos:
         a, b, c = combo
 
         if board[a] == board[b] == board[c] != "":
@@ -27,10 +26,10 @@ def check_winner():
             return
 
     if "" not in board:
-        messagebox.showinfo("Draw!", "It's a Draw!")
+        messagebox.showinfo("Draw!", "It's a draw!")
         reset_game()
 
-# Button click
+
 def button_click(index):
     global current_player
 
@@ -40,10 +39,15 @@ def button_click(index):
 
         check_winner()
 
-        current_player = "O" if current_player == "X" else "X"
-        player_label.config(text=f"Player: {current_player}")
+        if "" in board:
+            if current_player == "X":
+                current_player = "O"
+            else:
+                current_player = "X"
 
-# Reset game
+            player_label.config(text=f"Player: {current_player}")
+
+
 def reset_game():
     global current_player, board
 
@@ -55,27 +59,33 @@ def reset_game():
 
     player_label.config(text="Player: X")
 
-# Title
-Label(root, text="Tic Tac Toe",
-      font=("Arial", 20, "bold")).pack(pady=10)
 
-# Player Label
-player_label = Label(root, text="Player: X",
-                     font=("Arial", 14))
+Label(
+    root,
+    text="Tic Tac Toe",
+    font=("Arial", 20, "bold")
+).pack(pady=10)
+
+player_label = Label(
+    root,
+    text="Player: X",
+    font=("Arial", 14)
+)
+
 player_label.pack()
 
-# Frame for board
-frame = Frame(root)
-frame.pack(pady=10)
 
-buttons = []
+# Create a frame for the game board
+game_frame = Frame(root)
+game_frame.pack(pady=10)
 
 for row in range(3):
     for col in range(3):
+
         index = row * 3 + col
 
         btn = Button(
-            frame,
+            game_frame,
             text="",
             font=("Arial", 20, "bold"),
             width=5,
@@ -86,10 +96,12 @@ for row in range(3):
         btn.grid(row=row, column=col)
         buttons.append(btn)
 
-# Reset Button
-Button(root,
-       text="Restart Game",
-       font=("Arial", 12),
-       command=reset_game).pack(pady=10)
+
+Button(
+    root,
+    text="Restart Game",
+    font=("Arial", 12),
+    command=reset_game
+).pack(pady=10)
 
 root.mainloop()
