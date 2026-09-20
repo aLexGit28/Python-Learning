@@ -18,7 +18,7 @@ my_tuple = (5, 4, 3,2,1)
 my_tuple = list(my_tuple)
 print(type(my_tuple))
 
-my_tuple.append(0)
+# my_tuple.append(0)
 print(my_tuple)
 
 my_tuple = tuple(my_tuple)
