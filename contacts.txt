@@ -1,0 +1,1 @@
+This is to store contacts onlywe are learning file handling in python.
