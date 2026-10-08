@@ -1,6 +1,6 @@
-from tkinter import *
+from tkinter import * # type: ignore
 
-root = Tk() 
+root = Tk() # main window
 name = Label(root, text='Name')
 name.pack()
 text = Entry(root, width=50)

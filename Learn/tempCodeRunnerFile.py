@@ -1,2 +1,1 @@
-n = int(input('Enter the no.of rows: '))
-# m= int(input('Enter the no. of columns: '))
+ot.title('My Window')
