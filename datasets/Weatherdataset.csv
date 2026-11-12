@@ -1,0 +1,13 @@
+temp,Month,Year,rain
+30,January,2023,120
+32,february,2023,95
+np.nan,March,2023,100
+28,April,2023,np.nan
+29,May,2023,150
+np.nan,June,2023,80
+27,July,2023,np.nan
+30,August,2023,60
+23,September,2023,100
+25,October,2023,79
+22,November,2023,90
+27,December,2023,95
