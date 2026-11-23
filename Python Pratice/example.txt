@@ -1,1 +1,1 @@
-I like ProgrammingI write code in Python
+Testing the text written inside the file.Testing the append mode in file handling
